@@ -27,22 +27,25 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=20261125">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20261125">
 <style>
-  body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#0b0b0f;color:#f5f2ea}
+  :root{--bg:#FFFFFF;--alt:#F6F5F2;--surface:#FFFFFF;--ink:#0A0A0A;--muted:#5C5C5C;--line:#E6E4DF;--accent:#FFC21A;--gt:#9A6700;--on-accent:#0A0A0A;--ok:#0B8A4F;--blk:#0A0A0A;--blk2:#1A1A1A;--on-blk:#FFFFFF;--blk-muted:#B8B8B8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A0A0A;--alt:#121212;--surface:#171717;--ink:#F5F5F5;--muted:#A8A8A8;--line:#2A2A2A;--gt:#FFC21A;--ok:#3DDC97;--blk:#101010;color-scheme:dark}}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;font-size:16.5px}
   .wrap{max-width:560px;margin:0 auto;padding:28px 18px 48px}
   .brand{text-align:center;margin-bottom:8px}
   .logo{width:120px;height:120px;border-radius:50%;border:3px solid #f5b921;object-fit:cover}
   h1{font-size:26px;margin:10px 0 2px;letter-spacing:.3px}
-  h1 span{color:#f5b921}
-  .tag{color:#b9b3a4;font-size:14px;margin:0 0 4px}
-  .handle{color:#f5b921;font-size:14px;text-decoration:none}
-  .checked{color:#7ee0a3;font-size:13px;text-align:center;margin:14px 0 22px}
+  h1 span{color:var(--gt)}
+  .tag{color:var(--muted);font-size:14px;margin:0 0 4px}
+  .handle{color:var(--gt);font-size:14px;text-decoration:none;font-weight:700}
+  .checked{color:var(--ok);font-size:13px;text-align:center;margin:14px 0 22px;font-weight:600}
   .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 0 6px}
-  .chip{background:#17171f;color:#f5f2ea;border:1px solid #2b2b38;border-radius:999px;padding:7px 14px;font-size:13px;cursor:pointer}
-  .chip.active{background:#f5b921;color:#141005;border-color:#f5b921;font-weight:800}
-  .count{color:#8a8578;font-size:12px;text-align:center;margin:10px 0 22px}
-  h2{color:#f5b921;font-size:18px;letter-spacing:.6px;margin:26px 0 4px}
-  .sec-sub{color:#7ee0a3;font-size:13px;margin:0 0 12px}
-  .deal{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#17171f;border:1px solid #2b2b38;border-radius:16px;padding:0 0 16px;margin-bottom:14px;overflow:hidden}
+  .chip{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;cursor:pointer;font-family:inherit}
+  .chip.active{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:800}
+  .count{color:var(--muted);font-size:12px;text-align:center;margin:10px 0 22px}
+  h2{color:var(--ink);font-size:1.35rem;font-weight:800;letter-spacing:-.02em;margin:28px 0 6px}
+  .sec-sub{color:var(--muted);font-size:.95rem;margin:0 0 12px}
+  .deal{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:0 0 16px;margin-bottom:14px;overflow:hidden;transition:border-color .15s,transform .15s,box-shadow .15s}
+  .deal:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 10px 26px rgba(10,10,10,.07)}
   @media (min-width: 768px){
     .wrap{max-width:1080px;padding:36px 28px 56px}
     h1{font-size:32px}
@@ -53,17 +56,17 @@
     .grid{grid-template-columns:repeat(3,1fr)}
   }
   .deal:active{transform:scale(.99)}
-  .photo{background:#fff;display:flex;align-items:center;justify-content:center;min-height:180px}
+  .photo{background:#fff;display:flex;align-items:center;justify-content:center;min-height:180px;border-bottom:1px solid var(--line)}
   .photo img{max-width:100%;max-height:260px;object-fit:contain;display:block}
-  .cat{color:#f5b921;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:14px 18px 0}
-  .name{font-size:18px;font-weight:700;margin:5px 18px 6px;line-height:1.3}
-  .price{font-size:16px;margin:0 18px}
-  .price b{color:#7ee0a3;font-size:20px}
-  .price s{color:#8a8578}
-  .off{display:inline-block;background:#f5b921;color:#141005;font-weight:800;font-size:12px;border-radius:6px;padding:2px 7px;margin-left:8px;vertical-align:2px}
-  .why{color:#b9b3a4;font-size:13px;margin:7px 18px 12px;line-height:1.45}
-  .btn{display:inline-block;background:#f5b921;color:#141005;font-weight:800;font-size:14px;border-radius:9px;padding:8px 14px;margin:auto 18px 0;align-self:flex-start}
-  .note{color:#8a8578;font-size:12px;line-height:1.55;margin-top:22px;text-align:center}
+  .cat{color:var(--gt);font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;padding:14px 18px 0}
+  .name{font-size:18px;font-weight:700;margin:5px 18px 6px;line-height:1.3;color:var(--ink)}
+  .price{font-size:16px;margin:0 18px;color:var(--ink)}
+  .price b{color:var(--ink);font-size:22px;font-weight:800}
+  .price s{color:var(--muted)}
+  .off{display:inline-block;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:12px;border-radius:6px;padding:2px 7px;margin-left:8px;vertical-align:2px}
+  .why{color:var(--muted);font-size:13px;margin:7px 18px 12px;line-height:1.45}
+  .btn{display:inline-block;background:var(--accent);color:var(--on-accent);font-weight:700;font-size:.95rem;border-radius:10px;padding:10px 18px;margin:auto 18px 0;align-self:flex-start}
+  .note{color:var(--muted);font-size:12px;line-height:1.55;margin-top:22px;text-align:center}
 
 :root{--bg:#FFFFFF;--alt:#F6F5F2;--surface:#FFFFFF;--ink:#0A0A0A;--muted:#5C5C5C;--line:#E6E4DF;--accent:#FFC21A;--gt:#9A6700;--on-accent:#0A0A0A;--ok:#0B8A4F;--blk:#0A0A0A;--blk2:#1A1A1A;--on-blk:#FFFFFF;--blk-muted:#B8B8B8;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
@@ -121,9 +124,9 @@ h1 em{font-style:normal;color:var(--accent)}
 .sw.fk{color:#2874F0;font-style:italic}.sw.fk i{color:#FFC200;font-style:normal}
 .sw.am{color:var(--ink)}.sw.am svg{width:52px;height:9px;margin-top:2px}
 .sw.my{color:#FF3F6C}
-.deals-band{background:#0A0A0A;padding:56px 0;color:#f5f2ea}
+.deals-band{background:var(--bg);padding:56px 0;color:var(--ink)}
 .fashion-link{text-align:center;margin:28px 0 0}
-.fashion-link a{color:#FFC21A;font-weight:700;text-decoration:none;font-size:15px}
+.fashion-link a{color:var(--gt);font-weight:700;text-decoration:none;font-size:15px}
 section{padding:96px 0 0}
 .head{max-width:660px;margin-bottom:44px}
 .head.c{margin-left:auto;margin-right:auto;text-align:center}
@@ -233,7 +236,7 @@ a.logo{width:auto;height:auto;border:0;border-radius:0}
 <div class="stores"><div class="wrap"><span>Deals from</span><span class="sw fk">Flipkart<i>.</i></span><span class="sw am">amazon<svg viewBox="0 0 52 9" aria-hidden="true"><path d="M3 2c12 7 30 7 44 0" fill="none" stroke="#FF9900" stroke-width="2.4" stroke-linecap="round"/><path d="M43 0l6 2-4 4" fill="none" stroke="#FF9900" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="sw my">Myntra</span><span>and more</span></div></div>
 
 <div class="deals-band"><div class="wrap">
-  <p class="checked">Updated Wed 25 Nov 2026, ~6:50 PM IST — deals can sell out or change anytime</p>
+  <p class="checked">Updated Wed 25 Nov 2026, ~7:15 PM IST — deals can sell out or change anytime</p>
   <div class="chips"><button class="chip active" data-filter="all">All deals</button><button class="chip" data-filter="Soundbar Zebronics">Soundbar Zebronics</button><button class="chip" data-filter="Printer Epson">Printer Epson</button><button class="chip" data-filter="Earbuds Goboult">Earbuds Goboult</button><button class="chip" data-filter="Earphones Samsung">Earphones Samsung</button><button class="chip" data-filter="Earphones Portronics">Earphones Portronics</button><button class="chip" data-filter="Water Purifier Kent">Water Purifier Kent</button><button class="chip" data-filter="Soundbar Mivi">Soundbar Mivi</button><button class="chip" data-filter="Refrigerator Haier">Refrigerator Haier</button><button class="chip" data-filter="Earbuds Sony">Earbuds Sony</button><button class="chip" data-filter="Earphones Goboult">Earphones Goboult</button><button class="chip" data-filter="Power Bank Portronics">Power Bank Portronics</button><button class="chip" data-filter="Grooming Philips">Grooming Philips</button><button class="chip" data-filter="Headphones Sonos">Headphones Sonos</button><button class="chip" data-filter="Earbuds Cmf By Nothing">Earbuds Cmf By Nothing</button><button class="chip" data-filter="Mouse Zebronics">Mouse Zebronics</button><button class="chip" data-filter="Robot Vacuum Mi">Robot Vacuum Mi</button></div>
   <p class="count" id="count"></p>
   <div id="deals">
