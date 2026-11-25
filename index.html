@@ -142,6 +142,7 @@ h2.t{font-size:clamp(1.8rem,3.3vw,2.5rem);line-height:1.12;margin:0 0 14px;lette
 .vid h3{margin:10px 0 0;font-size:1.55rem;line-height:1.15;letter-spacing:-.02em}
 .vid em{font-style:normal;color:var(--blk-muted);font-size:.92rem;display:flex;align-items:center;gap:8px}
 .vid em svg{width:22px;height:22px}
+.vid img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;margin-bottom:14px;background:#000}
 .proc{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface)}
 .proc>div{padding:34px;border-right:1px solid var(--line)}.proc>div:last-child{border-right:0}
 .n{width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;display:grid;place-items:center;margin-bottom:16px}
@@ -232,7 +233,7 @@ a.logo{width:auto;height:auto;border:0;border-radius:0}
 <div class="stores"><div class="wrap"><span>Deals from</span><span class="sw fk">Flipkart<i>.</i></span><span class="sw am">amazon<svg viewBox="0 0 52 9" aria-hidden="true"><path d="M3 2c12 7 30 7 44 0" fill="none" stroke="#FF9900" stroke-width="2.4" stroke-linecap="round"/><path d="M43 0l6 2-4 4" fill="none" stroke="#FF9900" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="sw my">Myntra</span><span>and more</span></div></div>
 
 <div class="deals-band"><div class="wrap">
-  <p class="checked">Updated Wed 25 Nov 2026, ~6:41 PM IST — deals can sell out or change anytime</p>
+  <p class="checked">Updated Wed 25 Nov 2026, ~6:47 PM IST — deals can sell out or change anytime</p>
   <div class="chips"><button class="chip active" data-filter="all">All deals</button><button class="chip" data-filter="Soundbar Zebronics">Soundbar Zebronics</button><button class="chip" data-filter="Printer Epson">Printer Epson</button><button class="chip" data-filter="Earbuds Goboult">Earbuds Goboult</button><button class="chip" data-filter="Earphones Samsung">Earphones Samsung</button><button class="chip" data-filter="Earphones Portronics">Earphones Portronics</button><button class="chip" data-filter="Water Purifier Kent">Water Purifier Kent</button><button class="chip" data-filter="Soundbar Mivi">Soundbar Mivi</button><button class="chip" data-filter="Refrigerator Haier">Refrigerator Haier</button><button class="chip" data-filter="Earbuds Sony">Earbuds Sony</button><button class="chip" data-filter="Earphones Goboult">Earphones Goboult</button><button class="chip" data-filter="Power Bank Portronics">Power Bank Portronics</button><button class="chip" data-filter="Grooming Philips">Grooming Philips</button><button class="chip" data-filter="Headphones Sonos">Headphones Sonos</button><button class="chip" data-filter="Earbuds Cmf By Nothing">Earbuds Cmf By Nothing</button><button class="chip" data-filter="Mouse Zebronics">Mouse Zebronics</button><button class="chip" data-filter="Robot Vacuum Mi">Robot Vacuum Mi</button></div>
   <p class="count" id="count"></p>
   <div id="deals">
@@ -260,11 +261,11 @@ a.logo{width:auto;height:auto;border:0;border-radius:0}
 </div></section>
 
 <section id="videos"><div class="wrap">
-  <div class="head"><h2 class="t">Recent deal videos</h2><p>A few of our latest uploads on smartphones, TVs and more.</p></div>
+  <div class="head"><h2 class="t">Recent deal videos</h2><p>Our latest videos from the channel, updated automatically.</p></div>
   <div class="grid g3">
-    <a class="vid" href="https://www.youtube.com/watch?v=jRwmuZy1hf8" target="_blank" rel="noopener"><div><span>Smartphones</span><h3>Nothing Phone (3a) Pro vs (3a)</h3></div><em><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#yt"/></svg>Watch on YouTube</em></a>
-    <a class="vid" href="https://www.youtube.com/watch?v=r2pW7U3d6Hc" target="_blank" rel="noopener"><div><span>Televisions</span><h3>Motorola 55&quot; Mini LED TV</h3></div><em><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#yt"/></svg>Watch on YouTube</em></a>
-    <a class="vid" href="https://www.youtube.com/watch?v=TQnT8bxgfnE" target="_blank" rel="noopener"><div><span>Televisions</span><h3>Sony BRAVIA 5 65&quot; Mini LED TV</h3></div><em><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#yt"/></svg>Watch on YouTube</em></a>
+    <a class="vid" href="https://www.youtube.com/watch?v=jRwmuZy1hf8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/jRwmuZy1hf8/hqdefault.jpg" alt="Nothing Phone (3a) Pro (Grey, 256 GB) vs Nothing Phone (3a) (White, 256 GB)" loading="lazy"><div><h3>Nothing Phone (3a) Pro (Grey, 256 GB) vs Nothing Phone (3a) (White, 256 GB)</h3></div><em><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#yt"/></svg>Watch on YouTube</em></a>
+    <a class="vid" href="https://www.youtube.com/watch?v=r2pW7U3d6Hc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/r2pW7U3d6Hc/hqdefault.jpg" alt="Motorola 55&quot; Mini LED TV" loading="lazy"><div><h3>Motorola 55&quot; Mini LED TV</h3></div><em><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#yt"/></svg>Watch on YouTube</em></a>
+    <a class="vid" href="https://www.youtube.com/watch?v=TQnT8bxgfnE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/TQnT8bxgfnE/hqdefault.jpg" alt="Sony BRAVIA 5 65&quot; Mini LED TV" loading="lazy"><div><h3>Sony BRAVIA 5 65&quot; Mini LED TV</h3></div><em><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#yt"/></svg>Watch on YouTube</em></a>
   </div>
 </div></section>
 
